@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Интернет-магазин техники ShopProject." name="description"/>
+<title>ShopProject — магазин техники</title>
+<link href="css/style.css" rel="stylesheet"/>
+<script defer="" src="js/main.js"></script>
+<link href="css/responsive.css" rel="stylesheet"/></head>
+<body><a class="skip-link" href="#main">Перейти к основному содержимому</a>
+<header class="site-header">
+<div class="site-header__inner">
+<a class="site-header__logo" href="index.html">
+        ShopProject
+      </a>
+<nav aria-label="Основная навигация" class="site-nav">
+<ul class="site-nav__list">
+<li class="site-nav__item">
+<a aria-current="page" class="site-nav__link site-nav__link--active" href="index.html">
+              Главная
+            </a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="catalog.html">
+              Каталог
+            </a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="about.html">
+              О компании
+            </a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="contacts.html">
+              Контакты
+            </a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="#popular">
+              Популярные товары
+            </a>
+</li>
+<li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li></ul>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<section class="hero">
+<h1 class="hero__title">
+        Магазин техники ShopProject
+      </h1>
+<p class="hero__text">
+        Современная техника Apple для работы,
+        учёбы и повседневных задач.
+      </p>
+<a class="button button--primary" href="catalog.html">
+        Перейти в каталог
+      </a>
+</section>
+<section class="section">
+<h2 class="section__title">
+        Почему выбирают нас
+      </h2>
+<ul class="advantages-list">
+<li class="advantages-list__item">
+          Современная техника
+        </li>
+<li class="advantages-list__item">
+          Удобный каталог товаров
+        </li>
+<li class="advantages-list__item">
+          Подробные характеристики
+        </li>
+<li class="advantages-list__item">
+          Быстрое оформление заявки
+        </li>
+</ul>
+</section>
+<section class="section" id="popular">
+<h2 class="section__title">
+        Популярные товары
+      </h2>
+<div class="products-grid">
+<article class="product-card">
+<img alt="iPhone 16" class="product-card__image" height="360" loading="lazy" sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 30vw" src="images/iphone.png" srcset="images/iphone.png 480w, images/iphone.png 960w" width="480"/>
+<h3 class="product-card__title">
+            iPhone 16
+          </h3>
+<p class="product-card__description">
+            Смартфон Apple с дисплеем 6,1",
+            процессором A18 и основной камерой 48 Мп.
+          </p>
+<p class="product-card__price">
+            89 990 ₽
+          </p>
+<div class="product-card__actions">
+<a class="button button--secondary" href="product.html?id=iphone16">
+              Подробнее
+            </a>
+<button class="button button--primary product-card__button" data-product="iPhone 16" type="button">
+              Заказать
+            </button>
+</div>
+</article>
+<article class="product-card">
+<img alt='iPad Air 11" M3' class="product-card__image" height="360" loading="lazy" sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 30vw" src="images/ipad.png" srcset="images/ipad.png 480w, images/ipad.png 960w" width="480"/>
+<h3 class="product-card__title">
+            iPad Air 11" M3
+          </h3>
+<p class="product-card__description">
+            Планшет Apple с дисплеем Liquid Retina 11",
+            процессором M3 и накопителем 128 ГБ.
+          </p>
+<p class="product-card__price">
+            74 990 ₽
+          </p>
+<div class="product-card__actions">
+<a class="button button--secondary" href="product.html?id=ipad-air-m3">
+              Подробнее
+            </a>
+<button class="button button--primary product-card__button" data-product="iPad Air 11 M3" type="button">
+              Заказать
+            </button>
+</div>
+</article>
+<article class="product-card">
+<img alt='MacBook Air 13" M4' class="product-card__image" height="360" loading="lazy" sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 30vw" src="images/macbook.png" srcset="images/macbook.png 480w, images/macbook.png 960w" width="480"/>
+<h3 class="product-card__title">
+            MacBook Air 13" M4
+          </h3>
+<p class="product-card__description">
+            Лёгкий ноутбук Apple с дисплеем Liquid Retina 13,6",
+            процессором M4 и 16 ГБ объединённой памяти.
+          </p>
+<p class="product-card__price">
+            119 990 ₽
+          </p>
+<div class="product-card__actions">
+<a class="button button--secondary" href="product.html?id=macbook-air-m4">
+              Подробнее
+            </a>
+<button class="button button--primary product-card__button" data-product="MacBook Air 13 M4" type="button">
+              Заказать
+            </button>
+</div>
+</article>
+</div>
+</section>
+<aside class="student-info">
+<h2 class="student-info__title">
+        О проекте
+      </h2>
+<p class="student-info__text">
+        ShopProject — учебный проект интернет-магазина техники,
+        разработанный в рамках дисциплины
+        «Фронтенд и бэкенд разработка».
+      </p>
+</aside>
+</main>
+<footer class="site-footer">
+<div class="site-footer__inner">
+<p class="site-footer__text">
+        © 2026 ShopProject. Все права защищены.
+      </p>
+<p class="site-footer__text">
+        Дисциплина: Фронтенд и бэкенд разработка
+      </p>
+</div>
+</footer>
+<dialog aria-labelledby="order-dialog-title" class="order-dialog" id="order-dialog">
+<h2 class="order-dialog__title" id="order-dialog-title">
+      Оформление заявки
+    </h2>
+<form action="#" class="order-form" id="order-form" method="post" novalidate="">
+<input id="selected-product" name="selected-product" type="hidden"/>
+<div class="order-form__field">
+<label class="order-form__label" for="order-name">
+          Имя
+        </label>
+<input autocomplete="given-name" class="order-form__input" id="order-name" minlength="2" name="name" placeholder="Введите ваше имя" required="" type="text"/>
+</div>
+<div class="order-form__field">
+<label class="order-form__label" for="order-email">
+          E-mail
+        </label>
+<input autocomplete="email" class="order-form__input" id="order-email" name="email" placeholder="example@mail.ru" required="" type="email"/>
+</div>
+<div class="order-form__field">
+<label class="order-form__label" for="order-phone">
+</label></div></form></dialog></body></html>
