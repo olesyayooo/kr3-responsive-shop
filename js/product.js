@@ -1,3 +1,4 @@
+
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       price: "89 990 ₽",
 
-      image: "images/iphone.png",
+      image: "iphone",
 
       characteristics: {
         "Дисплей": '6,1" Super Retina XDR',
@@ -24,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
 
-
     "ipad-air-m3": {
       title: 'iPad Air 11" M3',
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       price: "74 990 ₽",
 
-      image: "images/ipad.png",
+      image: "ipad",
 
       characteristics: {
         "Дисплей": '11" Liquid Retina',
@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
 
-
     "macbook-air-m4": {
       title: 'MacBook Air 13" M4',
 
@@ -56,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       price: "119 990 ₽",
 
-      image: "images/macbook.png",
+      image: "macbook",
 
       characteristics: {
         "Дисплей": '13,6" Liquid Retina',
@@ -71,85 +70,55 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-
   const params = new URLSearchParams(window.location.search);
-
   const productId = params.get("id");
-
   const product = products[productId];
-
 
   if (!product) {
     window.location.href = "catalog.html";
     return;
   }
 
-
   const title = document.querySelector("#product-title");
-
-  const description = document.querySelector(
-    "#product-description"
-  );
-
+  const description = document.querySelector("#product-description");
   const price = document.querySelector("#product-price");
-
   const image = document.querySelector("#product-image");
-
-  const breadcrumb = document.querySelector(
-    "#product-breadcrumb"
-  );
-
-  const caption = document.querySelector(
-    "#product-table-caption"
-  );
-
-  const characteristics = document.querySelector(
-    "#product-characteristics"
-  );
-
-  const orderButton = document.querySelector(
-    "#product-order-button"
-  );
-
+  const breadcrumb = document.querySelector("#product-breadcrumb");
+  const caption = document.querySelector("#product-table-caption");
+  const characteristics = document.querySelector("#product-characteristics");
+  const orderButton = document.querySelector("#product-order-button");
 
   title.textContent = product.title;
-
   description.textContent = product.description;
-
   price.textContent = product.price;
 
-  image.src = product.image;
+  image.src = `images/${product.image}-480.webp`;
 
+  image.srcset = `
+    images/${product.image}-320.webp 320w,
+    images/${product.image}-480.webp 480w,
+    images/${product.image}-640.webp 640w
+  `;
+
+  image.sizes = "(max-width: 767px) 90vw, 45vw";
   image.alt = product.title;
+  image.loading = "eager";
 
   breadcrumb.textContent = product.title;
-
-  caption.textContent =
-    `Основные характеристики ${product.title}`;
-
+  caption.textContent = `Основные характеристики ${product.title}`;
   orderButton.dataset.product = product.title;
 
+  Object.entries(product.characteristics).forEach(([name, value]) => {
+    const row = document.createElement("tr");
+    const nameCell = document.createElement("td");
+    const valueCell = document.createElement("td");
 
-  Object.entries(product.characteristics).forEach(
-    ([name, value]) => {
-      const row = document.createElement("tr");
+    nameCell.textContent = name;
+    valueCell.textContent = value;
 
-      const nameCell = document.createElement("td");
-
-      const valueCell = document.createElement("td");
-
-
-      nameCell.textContent = name;
-
-      valueCell.textContent = value;
-
-
-      row.append(nameCell, valueCell);
-
-      characteristics.append(row);
-    }
-  );
-
+    row.append(nameCell, valueCell);
+    characteristics.append(row);
+  });
 
   document.title = `${product.title} — ShopProject`;
 });
